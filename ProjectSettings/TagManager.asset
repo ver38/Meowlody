@@ -5,6 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Border
+  - Re
+  - Mi
+  - Fa
+  - Sol
+  - La
+  - Si
+  - PDo
+  - PRe
+  - PMi
+  - PFa
+  - PSol
   layers:
   - Default
   - TransparentFX

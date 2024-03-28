@@ -7,13 +7,12 @@ public class SpawnSemiminime : MonoBehaviour
     public GameObject semiminima;
     public float maxX;
     public float minX;
-    public GameObject axisContainer; // Reference to the parent container object
+    public GameObject axisContainer; 
     public float timeBetweenSpawn;
     private float spawnTime;
 
     void Start()
     {
-        // Initialize the spawn time
         spawnTime = Time.time + timeBetweenSpawn;
     }
 
@@ -32,11 +31,10 @@ public class SpawnSemiminime : MonoBehaviour
 
         if (spawnAxes.Length < 2)
         {
-            Debug.LogWarning("Not enough axes in the container to spawn objects.");
+            Debug.LogWarning("could not find any axis in the container.");
             return;
         }
 
-        // Randomly select two different axes
         Transform axis1 = spawnAxes[Random.Range(0, spawnAxes.Length)];
         Transform axis2 = axis1;
         while (axis2 == axis1)
@@ -67,7 +65,7 @@ public class SpawnSemiminime : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Axis container not assigned!");
+            Debug.LogError("could not find axis container");
             return new Transform[0];
         }
     }
