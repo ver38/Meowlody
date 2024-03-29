@@ -28,10 +28,10 @@ public class SpawnSemiminime : MonoBehaviour
     void Spawn()
     {
         Transform[] spawnAxes = GetAxesFromContainer();
-
+        //null check
         if (spawnAxes.Length < 2)
         {
-            Debug.LogWarning("could not find any axis in the container.");
+            Debug.LogWarning("container is empty");
             return;
         }
 
@@ -45,12 +45,25 @@ public class SpawnSemiminime : MonoBehaviour
         Vector3 axis1Position = axis1.position;
         Vector3 axis2Position = axis2.position;
 
+        // qui calcolo la distanza tra gli assi con una soglia minima
+        float distanceBetweenAxes = Vector3.Distance(axis1Position, axis2Position);
+        float minDistanceBetweenAxes = 1.0f; 
+
+        // se la distanza tra gli assi è < di mindistance, non spawna
+        //però così è lento lo spawn
+        if (distanceBetweenAxes < minDistanceBetweenAxes)
+        {
+            Debug.LogWarning("distance too small to spawn");
+            return;
+        }
+
         float randomX1 = Random.Range(minX, maxX);
         float randomX2 = Random.Range(minX, maxX);
 
         Instantiate(semiminima, new Vector3(axis1Position.x + randomX1, axis1Position.y, axis1Position.z), Quaternion.identity);
         Instantiate(semiminima, new Vector3(axis2Position.x + randomX2, axis2Position.y, axis2Position.z), Quaternion.identity);
     }
+
 
     Transform[] GetAxesFromContainer()
     {

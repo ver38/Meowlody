@@ -26,7 +26,7 @@ public class TextArrayBuilder : MonoBehaviour
 
         for (int i = 0; i < textArray.Length; i++)
         {
-            if (i != randomIndex) // Disattiva tutti gli altri tranne quello selezionato casualmente
+            if (i != randomIndex) // disattiva tutti i testi tranne quello selezionato casualmente
             {
                 textArray[i].gameObject.SetActive(false);
             }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Minicookie : MonoBehaviour
 {
-
+    public int noteCount;
 
     // Update is called once per frame
     void Update()

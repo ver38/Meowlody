@@ -16,6 +16,8 @@ TagManager:
   - PMi
   - PFa
   - PSol
+  - Nota
+  - Cookie
   layers:
   - Default
   - TransparentFX

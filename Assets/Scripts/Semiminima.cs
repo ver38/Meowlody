@@ -18,5 +18,11 @@ public class NewBehaviourScript : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        //collisione con minicookie
+        if (collision.tag == "Cookie")
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 }

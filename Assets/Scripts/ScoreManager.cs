@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour
     {
        // arbuild.SetCurrentNoteTag();
 
-        noteText.text = noteCount.ToString();
+        noteText.text = "Score: " + noteCount.ToString();
 
     }
 }

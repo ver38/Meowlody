@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     private Vector2 playerDirection;
     public ScoreManager sm;
 
+    private bool isTouching = false;
+    private Vector2 touchStartPosition;
+    private Vector2 lastTouchPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +24,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
 
-        float directionY = Input.GetAxisRaw("Vertical");
-        playerDirection = new Vector2(0, directionY).normalized;
+            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            touchPosition.z = 0; 
 
+            transform.position = new Vector3(transform.position.x, touchPosition.y, transform.position.z);
+        }
+        else
+        {
+            float directionY = Input.GetAxisRaw("Vertical");
+            rb.velocity = new Vector2(0, directionY * playerSpeed);
+        }
     }
 
     private void FixedUpdate()
