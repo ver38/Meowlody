@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     public float playerSpeed;
     private Rigidbody2D rb;
     private Vector2 playerDirection;
+    public ScoreManager sm;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,26 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(0, playerDirection.y * playerSpeed);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if(other.gameObject.CompareTag("Nota"))
+        {
+            Destroy(other.gameObject);
+
+            sm.noteCount ++;
+        }
+
+        //collisione con minicookie
+        if (other.gameObject.CompareTag("Cookie"))
+        {
+            Destroy(other.gameObject);
+
+            sm.noteCount += 10;
+        }
+
     }
 
 }
