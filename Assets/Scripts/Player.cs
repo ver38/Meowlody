@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 playerDirection;
     public ScoreManager sm;
-
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         float directionY = Input.GetAxisRaw("Vertical");
         playerDirection = new Vector2(0, directionY).normalized;
 
@@ -33,11 +34,12 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        if(other.gameObject.CompareTag("Nota"))
+
+        if (other.gameObject.CompareTag("Nota"))
         {
             Destroy(other.gameObject);
 
-            sm.noteCount ++;
+            sm.noteCount++;
         }
 
         //collisione con minicookie

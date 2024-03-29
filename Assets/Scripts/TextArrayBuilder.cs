@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class TextArrayBuilder : MonoBehaviour
 {
     public GameObject noteTextContainer;
-    public Text[] textArray; 
+    public Text[] textArray;
+    //public string currentNoteTag;
 
     void Start()
     {
@@ -20,7 +21,6 @@ public class TextArrayBuilder : MonoBehaviour
         }
 
 
-
         int randomIndex = Random.Range(0, textArray.Length);
         textArray[randomIndex].gameObject.SetActive(true);
 
@@ -31,5 +31,18 @@ public class TextArrayBuilder : MonoBehaviour
                 textArray[i].gameObject.SetActive(false);
             }
         }
+
+        //SetCurrentNoteTag();
     }
-}
+    //tutta roba messa mo in prova, se non funziona rimuovi tutte le reference a currentnotetag anche da sopra e dagli altri script
+    //private void SetCurrentNoteTag()
+    //{
+      //  throw new System.NotImplementedException();
+    //}
+
+//    public void SetCurrentNoteTag(string tag)
+  //  {
+    //    currentNoteTag = tag;
+    //}
+
+}  
