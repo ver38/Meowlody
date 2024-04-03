@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Skull : MonoBehaviour
 {
+    //AudioManager audioManager;
+    //private void Awake()
+    //{
+      //  audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    //}
+
 
     private GameObject player;
 
@@ -22,7 +28,7 @@ public class Skull : MonoBehaviour
 
         else if (collision.tag == "Player")
         {
-
+           // audioManager.PlaySFX(audioManager.skull);
             Destroy(player.gameObject);
         }
     }

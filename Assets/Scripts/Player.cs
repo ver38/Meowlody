@@ -17,6 +17,15 @@ public class Player : MonoBehaviour
     private Vector2 touchStartPosition;
     private Vector2 lastTouchPosition;
 
+    //AudioManager audioManager;
+    //ok rompe il touch
+    //private void Awake()
+    //{
+      //  audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    //}
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +63,10 @@ public class Player : MonoBehaviour
         //collisione con minicookie
         if (other.gameObject.CompareTag("Cookie"))
         {
+            //audio se rompe il gioco lo levi da qua e levi sopra audiomanager e awake
+            // ok rompe la collisione
+            //audioManager.PlaySFX(audioManager.cookie);
+
             Destroy(other.gameObject);
 
             sm.AddPoint();
