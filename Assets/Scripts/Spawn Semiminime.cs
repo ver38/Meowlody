@@ -18,7 +18,7 @@ public class SpawnSemiminime : MonoBehaviour
     private float spawnTime;
 
     public GameObject note1;
-    GameObject note2;
+    public GameObject note2;
     public GameObject selectedText = null;
     public GameObject textObject = null;
 
@@ -93,6 +93,8 @@ public class SpawnSemiminime : MonoBehaviour
         if (axis1.CompareTag(note1.tag) && axis2.CompareTag(note2.tag))
         {
             Debug.Log("tag assi-note assegnati correttamente");
+       
+        
         }
 
         // prendo un testo a caso tra i due associati al tag delle due note
@@ -105,6 +107,10 @@ public class SpawnSemiminime : MonoBehaviour
                 break;
             }
         }
+
+        //prendo il tag da passarmi nello script della collisione della nota
+        string selectedTextTag = selectedText.tag;
+        Debug.Log("vedo tag di selectedText: " + selectedTextTag);
 
 
         // disattiva tutti i testi tranne quello selezionato
@@ -124,6 +130,9 @@ public class SpawnSemiminime : MonoBehaviour
         {
             Debug.LogWarning("non ci sono testi associati al tag delle note");
         }
+
+
+
     }
 
     Transform[] GetAxesFromContainer()

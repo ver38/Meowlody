@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    public SpawnSemiminime spawnSem;
+    public ScoreManager sm;
     public int noteCount;
 
     // Update is called once per frame
@@ -22,10 +24,14 @@ public class NewBehaviourScript : MonoBehaviour
 
         //collisione con player
         if (collision.tag == "Player")
-        {
-            Destroy(this.gameObject);
-            noteCount++;
-        }
 
+        {
+            sm.AddPoint();
+            Destroy(this.gameObject);
+           
+
+        }
     }
+
+    
 }
