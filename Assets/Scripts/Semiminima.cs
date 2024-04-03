@@ -22,16 +22,27 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
 
-        //collisione con player
+        //collisione con players
         if (collision.tag == "Player")
+            Debug.Log("collisione avvenuta ye");
 
         {
-            sm.AddPoint();
+            // sm.AddPoint();
             Destroy(this.gameObject);
-           
-
+            Debug.Log("oggetto distrutto");
         }
+
+        //if (collision.tag == "Player" && spawnSem.textObject.tag == spawnSem.note1.tag))
+        //{
+          //  Debug.Log("yo");
+                
+
+            //} else {
+              //  Debug.Log("no");
+                    }
+            // fine if else
+        //}
     }
 
     
-}
+

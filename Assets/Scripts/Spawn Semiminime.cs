@@ -19,8 +19,12 @@ public class SpawnSemiminime : MonoBehaviour
 
     public GameObject note1;
     public GameObject note2;
+
+
+
     public GameObject selectedText = null;
     public GameObject textObject = null;
+
 
 
 
@@ -87,6 +91,8 @@ public class SpawnSemiminime : MonoBehaviour
         note1.tag = axis1.tag;
         note2.tag = axis2.tag;
 
+        string note1Tag = note1.tag;
+        string note2Tag = note2.tag;
 
 
         // controlla se il tag delle note = tag degli assi, NON TOCCARE PIU NIENTE

@@ -764,6 +764,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 229777305}
+  - component: {fileID: 229777306}
   m_Layer: 0
   m_Name: AxesContainer
   m_TagString: Untagged
@@ -797,6 +798,21 @@ Transform:
   - {fileID: 1047276716}
   m_Father: {fileID: 836981535}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &229777306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229777304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5bb2590e807437e81b50515a73c2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnSem: {fileID: 0}
+  sm: {fileID: 0}
+  noteCount: 0
 --- !u!1 &309121377
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +942,7 @@ MonoBehaviour:
   player: {fileID: 652476012}
   timeBetweenSpawn: 4
   note1: {fileID: 4119136520789106343, guid: 290d8a6979e6f4eb09779a641ba8ab5d, type: 3}
+  note2: {fileID: 4119136520789106343, guid: 290d8a6979e6f4eb09779a641ba8ab5d, type: 3}
   selectedText: {fileID: 0}
   textObject: {fileID: 0}
 --- !u!4 &319073044
@@ -1532,6 +1549,7 @@ MonoBehaviour:
   player: {fileID: 0}
   timeBetweenSpawn: 0
   note1: {fileID: 0}
+  note2: {fileID: 0}
   selectedText: {fileID: 0}
   textObject: {fileID: 0}
 --- !u!1 &626851680
@@ -4213,6 +4231,7 @@ MonoBehaviour:
   player: {fileID: 0}
   timeBetweenSpawn: 0
   note1: {fileID: 0}
+  note2: {fileID: 0}
   selectedText: {fileID: 0}
   textObject: {fileID: 0}
 --- !u!1 &1842110139
