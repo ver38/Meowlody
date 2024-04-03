@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 playerDirection;
     public ScoreManager sm;
+    //public SpawnSemiminime spawnSem;
+    public TextArrayBuilder tab;
 
     private bool isTouching = false;
     private Vector2 touchStartPosition;
@@ -29,7 +31,7 @@ public class Player : MonoBehaviour
             Touch touch = Input.GetTouch(0);
 
             Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-            touchPosition.z = 0; 
+            touchPosition.z = 0;
 
             transform.position = new Vector3(transform.position.x, touchPosition.y, transform.position.z);
         }
@@ -49,21 +51,13 @@ public class Player : MonoBehaviour
     {
 
 
-        if (other.gameObject.CompareTag("Nota"))
-        {
-            Destroy(other.gameObject);
-
-            sm.noteCount++;
-        }
-
         //collisione con minicookie
         if (other.gameObject.CompareTag("Cookie"))
         {
             Destroy(other.gameObject);
 
-            sm.noteCount += 10;
+            sm.AddPoint();
         }
-
     }
 
 }

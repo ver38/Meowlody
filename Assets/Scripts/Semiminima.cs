@@ -9,19 +9,22 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Border")
+        if (collision.tag == "Border")
         {
             Destroy(this.gameObject);
         }
-        //collisione con minicookie
-        if (collision.tag == "Cookie")
+
+
+        //collisione con player
+        if (collision.tag == "Player")
         {
             Destroy(this.gameObject);
+            noteCount++;
         }
 
     }

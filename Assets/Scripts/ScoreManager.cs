@@ -7,25 +7,49 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public int noteCount;
-    public Text noteText;
-    //public string currentNoteTag;
-    //public TextArrayBuilder arbuild; 
+    public Text scoreText;
+    public Text highScoreText;
+    public Text lastScoreText;
+
+    public int score = 0;
+    public int highScore = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-       // currentNoteTag = ""; 
+        score = PlayerPrefs.GetInt("score", 0);
+        highScore = PlayerPrefs.GetInt("highScore", 0);
+
+        scoreText.text = "Score: " + score.ToString();
+        lastScoreText.text = score.ToString();
+
+        lastScoreText.text = "Your score: " + score.ToString();
+        highScoreText.text = "Max score: " + highScore.ToString();
+    }
+
+    public void AddPoint()
+    {
+        score += 10;
+        scoreText.text = "Score: " + score.ToString();
+        lastScoreText.text = "Score: " + score.ToString();
+
+        if (highScore < score)
+            PlayerPrefs.SetInt("highScore", score);
+
+    }
+
+    public void AddNotePoint()
+    {
+
+        score += 1;
 
     }
 
     // Update is called once per frame
     void Update()
-        
-        //questo update è solo per contare, quindi notecount e notetext devono rimanere non ti scordare
-        // l unica aggiunta è public string currentnotetag per provare a confrontare i tag nelle collisioni
-    {
-       // arbuild.SetCurrentNoteTag();
 
-        noteText.text = "Score: " + noteCount.ToString();
+
+    {
 
     }
 }
