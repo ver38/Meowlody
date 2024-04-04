@@ -30,6 +30,8 @@ public class ScoreManager : MonoBehaviour
 
     public void AddPoint()
     {
+
+       
         score += 10;
         scoreText.text = "Score: " + score.ToString();
         lastScoreText.text = "Score: " + score.ToString();
