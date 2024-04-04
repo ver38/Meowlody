@@ -13,6 +13,7 @@ public class SpawnSemiminime : MonoBehaviour
     public static TextArrayBuilder textarraybuild;
     public Player player;
     public static ScoreManager sm;
+    public static Semiminima scriptPrefab;
 
     public float timeBetweenSpawn;
     private float spawnTime;
@@ -33,6 +34,13 @@ public class SpawnSemiminime : MonoBehaviour
     {
 
         spawnTime = Time.time + timeBetweenSpawn;
+
+        //trova lo script del prefab per poter richiamare il metodo ontriggerenter2d
+      //  GameObject objWithScript1 = GameObject.Find("Semiminima");
+
+        //  referenza allo script del prefab
+        //scriptPrefab = objWithScript1.GetComponent<Semiminima>();
+
     }
 
     void Update()
@@ -41,6 +49,7 @@ public class SpawnSemiminime : MonoBehaviour
         {
             Spawn();
             spawnTime = Time.time + timeBetweenSpawn;
+            CompareTags();
         }
     }
 
@@ -81,18 +90,18 @@ public class SpawnSemiminime : MonoBehaviour
 
 
         // NON CAMBIARE QUESTO PER NESSUNA RAGIONE AL MONDO VERONICA 
-        //GameObject note1 = Instantiate(semiminima, new Vector3(axis1Position.x + Random.Range(minX, maxX), axis1Position.y, axis1Position.z), Quaternion.identity);
-        //GameObject note2 = Instantiate(semiminima, new Vector3(axis2Position.x + Random.Range(minX, maxX), axis2Position.y, axis2Position.z), Quaternion.identity);
+        GameObject note1 = Instantiate(semiminima, new Vector3(axis1Position.x + Random.Range(minX, maxX), axis1Position.y, axis1Position.z), Quaternion.identity);
+        GameObject note2 = Instantiate(semiminima, new Vector3(axis2Position.x + Random.Range(minX, maxX), axis2Position.y, axis2Position.z), Quaternion.identity);
 
-        note1 = Instantiate(semiminima, new Vector3(axis1Position.x + Random.Range(minX, maxX), axis1Position.y, axis1Position.z), Quaternion.identity);
-        note2 = Instantiate(semiminima, new Vector3(axis2Position.x + Random.Range(minX, maxX), axis2Position.y, axis2Position.z), Quaternion.identity);
+        //note1 = Instantiate(semiminima, new Vector3(axis1Position.x + Random.Range(minX, maxX), axis1Position.y, axis1Position.z), Quaternion.identity);
+        //note2 = Instantiate(semiminima, new Vector3(axis2Position.x + Random.Range(minX, maxX), axis2Position.y, axis2Position.z), Quaternion.identity);
 
 
         note1.tag = axis1.tag;
         note2.tag = axis2.tag;
 
-        string note1Tag = note1.tag;
-        string note2Tag = note2.tag;
+        //string note1Tag = note1.tag;
+        //string note2Tag = note2.tag;
 
 
         // controlla se il tag delle note = tag degli assi, NON TOCCARE PIU NIENTE
@@ -137,9 +146,30 @@ public class SpawnSemiminime : MonoBehaviour
             Debug.LogWarning("non ci sono testi associati al tag delle note");
         }
 
+    }
 
+    void CompareTags()
+    {
+
+        //comparo il tag del testo spawnato col tag delle note
+        // tutto ok funziona ma rompe lo spawn perché se non trova testi corrispondenti spawna a caso finché non ne trova
+        if (selectedText.tag == note2.tag || selectedText.tag == note1.tag)
+            Debug.Log("test");
+
+        {
+            scriptPrefab.OnTriggerEnter2D();
+            //sm.AddPoint();
+            Debug.Log("testo corrisponde a nota1");
+
+        }
+
+       //if selectedTetx.tag == nota con cui avviene la collisione
+       //come sto gestendo la collisione? 
 
     }
+
+
+
 
     Transform[] GetAxesFromContainer()
     {

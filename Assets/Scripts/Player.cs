@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 playerDirection;
     public ScoreManager sm;
-    //public SpawnSemiminime spawnSem;
+    public SpawnSemiminime spawnSem;
     public TextArrayBuilder tab;
 
     private bool isTouching = false;
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
+        
 
         //collisione con minicookie
         if (other.gameObject.CompareTag("Cookie"))
@@ -71,6 +71,12 @@ public class Player : MonoBehaviour
 
             sm.AddPoint();
         }
+
+        
+
+
     }
+
+
 
 }
