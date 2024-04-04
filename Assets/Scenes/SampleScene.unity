@@ -863,7 +863,7 @@ MonoBehaviour:
   player: {fileID: 652476012}
   sm: {fileID: 0}
   scriptPrefab: {fileID: 0}
-  timeBetweenSpawn: 4
+  timeBetweenSpawn: 3
   note1: {fileID: 4119136520789106343, guid: 290d8a6979e6f4eb09779a641ba8ab5d, type: 3}
   note2: {fileID: 4119136520789106343, guid: 290d8a6979e6f4eb09779a641ba8ab5d, type: 3}
   selectedText: {fileID: 0}
@@ -1984,7 +1984,7 @@ MonoBehaviour:
   maxX: 2
   minX: -2
   axisContainer: {fileID: 229777304}
-  timeBetweenSpawn: 10
+  timeBetweenSpawn: 15
 --- !u!1 &797444156
 GameObject:
   m_ObjectHideFlags: 0
@@ -5186,7 +5186,7 @@ MonoBehaviour:
   maxX: 2
   minX: -2
   axisContainer: {fileID: 229777304}
-  timeBetweenSpawn: 14
+  timeBetweenSpawn: 18
 --- !u!1 &2067606793
 GameObject:
   m_ObjectHideFlags: 0

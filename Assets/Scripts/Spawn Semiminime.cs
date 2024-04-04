@@ -21,12 +21,16 @@ public class SpawnSemiminime : MonoBehaviour
     public GameObject note1;
     public GameObject note2;
 
-    // public GameObject selectedText = null;
-    //public GameObject textObject = null;
+    // il valore di selectedText non si aggiorna al di fuori di Spawn()
+    // quindi quando vado a richiamarlo dall'altro script
+    //non ha il tag associato che dovrebbe avere a fine spawn perché si resetta
+    //questo rende ogni condizione di confronto fra tag sempre falsa al di fuori di Spawn()
+    //quindi i punti non vengono attribuiti
+
+
     public GameObject selectedText;
     //public GameObject textObject;
 
-    public int points = 2;
 
 
 
@@ -96,7 +100,6 @@ public class SpawnSemiminime : MonoBehaviour
         }
 
         // prendo un testo a caso tra i due associati al tag delle due note
-        // GameObject selectedText = null;
         foreach (GameObject textObject in noteTextContainer)
         {
             if (textObject.CompareTag(note1.tag) || textObject.CompareTag(note2.tag))
@@ -105,13 +108,7 @@ public class SpawnSemiminime : MonoBehaviour
             }
         }
 
-        //prendo il tag da passarmi nello script della collisione della nota
-        //selectedText.tag = note1.tag;
-        //string selectedTextTag = selectedText.tag;
-        //Debug.Log("vedo tag di selectedText: " + selectedTextTag);
-
-        //selectedText.tag = note1.tag;
-        //Debug.Log("vedo i due tag: " + selectedTextTag + note1.tag);
+        
 
         // disattiva tutti i testi tranne quello selezionato
         foreach (GameObject textObject in noteTextContainer)
