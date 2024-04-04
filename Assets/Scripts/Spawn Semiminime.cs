@@ -21,8 +21,10 @@ public class SpawnSemiminime : MonoBehaviour
     public GameObject note1;
     public GameObject note2;
 
-    public GameObject selectedText = null;
-    public GameObject textObject = null;
+    // public GameObject selectedText = null;
+    //public GameObject textObject = null;
+    public GameObject selectedText;
+    //public GameObject textObject;
 
     public int points = 2;
 
@@ -41,7 +43,6 @@ public class SpawnSemiminime : MonoBehaviour
         {
             Spawn();
             spawnTime = Time.time + timeBetweenSpawn;
-            //CompareTags();
         }
     }
 
@@ -101,7 +102,6 @@ public class SpawnSemiminime : MonoBehaviour
             if (textObject.CompareTag(note1.tag) || textObject.CompareTag(note2.tag))
             {
                 selectedText = textObject;
-                //break;
             }
         }
 
@@ -132,50 +132,22 @@ public class SpawnSemiminime : MonoBehaviour
         }
 
         selectedText.tag = note1.tag;
-        string selectedTextTag = selectedText.tag;
-        Debug.Log("vedo tag di selectedText: " + selectedTextTag);
+        //string selectedTextTag = selectedText.tag;
+        Debug.Log("vedo tag di selectedText: " + selectedText.tag);
 
         //selectedText.tag = note1.tag;
-        Debug.Log("vedo i due tag: " + selectedTextTag + note1.tag);
+        Debug.Log("vedo i due tag: " + selectedText.tag + note1.tag);
 
-        if (selectedText.tag == note1.tag)
-        // AddPointsToScore();
-
-        {
-
-
-            // AddPointsToScore();
-            Debug.Log("tag del testo e tag nota sono uguali");
-        }
-        else
-        {
-            Debug.Log("i tag sono diversi");
-        }
-    }
-
-
-   // public void CompareTags()
-    //{
-        //comparo il tag del testo spawnato col tag delle note
-    //    if (selectedText.tag != note1.tag)
-            // AddPointsToScore();
-
-      //  {
-
-
-            // AddPointsToScore();
-        //    Debug.Log("tag del testo e tag nota sono uguali");
-       // }
-       // else
-       // {
-         //   Debug.Log("i tag sono diversi");
-       // }
-   // }
-
-
-    private void AddPointsToScore()
-    {
-       // sm.AddPoint();
+   
+            if (selectedText.tag == note1.tag)
+            {
+                Debug.Log("tag del testo e tag nota sono uguali");
+            }
+            else
+            {
+                Debug.Log("i tag sono diversi");
+            }
+        
     }
 
     Transform[] GetAxesFromContainer()

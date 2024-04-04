@@ -861,11 +861,13 @@ MonoBehaviour:
   - {fileID: 120488955}
   - {fileID: 626851680}
   player: {fileID: 652476012}
+  sm: {fileID: 0}
+  scriptPrefab: {fileID: 0}
   timeBetweenSpawn: 4
   note1: {fileID: 4119136520789106343, guid: 290d8a6979e6f4eb09779a641ba8ab5d, type: 3}
   note2: {fileID: 4119136520789106343, guid: 290d8a6979e6f4eb09779a641ba8ab5d, type: 3}
   selectedText: {fileID: 0}
-  textObject: {fileID: 0}
+  points: 2
 --- !u!4 &319073044
 Transform:
   m_ObjectHideFlags: 0
@@ -1468,11 +1470,13 @@ MonoBehaviour:
   - {fileID: 120488955}
   - {fileID: 626851680}
   player: {fileID: 0}
+  sm: {fileID: 0}
+  scriptPrefab: {fileID: 0}
   timeBetweenSpawn: 0
   note1: {fileID: 0}
   note2: {fileID: 0}
   selectedText: {fileID: 0}
-  textObject: {fileID: 0}
+  points: 2
 --- !u!1 &626851680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,7 +2214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c5e1a4d810144f0bf9cd4d96a24ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteCount: 0
   scoreText: {fileID: 1979166004}
   highScoreText: {fileID: 1905324301}
   lastScoreText: {fileID: 891023813}
@@ -3494,7 +3497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1026788089}
   SFXSource: {fileID: 1840701166}
-  background: {fileID: 8300000, guid: 15aa6be86449f4bb59d48de0ae55fb71, type: 3}
+  background: {fileID: 8300000, guid: 55936b6910f064f93b53861641ee2d43, type: 3}
   odetojoy: {fileID: 8300000, guid: 55936b6910f064f93b53861641ee2d43, type: 3}
   moonlight: {fileID: 8300000, guid: 770478050220342009d9846b15bfa732, type: 3}
   cookie: {fileID: 8300000, guid: 989d7edbe041a4582b5945485560c62f, type: 3}
@@ -4331,11 +4334,13 @@ MonoBehaviour:
   - {fileID: 120488955}
   - {fileID: 626851680}
   player: {fileID: 0}
+  sm: {fileID: 0}
+  scriptPrefab: {fileID: 0}
   timeBetweenSpawn: 0
   note1: {fileID: 0}
   note2: {fileID: 0}
   selectedText: {fileID: 0}
-  textObject: {fileID: 0}
+  points: 2
 --- !u!1 &1840701165
 GameObject:
   m_ObjectHideFlags: 0
