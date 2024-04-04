@@ -61,7 +61,9 @@ public class Semiminima : MonoBehaviour
             Debug.Log("collisione avvenuta ye");
         {
           Destroy(this.gameObject);
-         }
+            //sm.AddNotePoint();
+
+        }
         throw new NotImplementedException();
    }
 

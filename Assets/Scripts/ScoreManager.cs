@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int noteCount;
+    //public int noteCount;
     public Text scoreText;
     public Text highScoreText;
     public Text lastScoreText;
@@ -40,8 +40,11 @@ public class ScoreManager : MonoBehaviour
 
     public void AddNotePoint()
     {
+        score ++;
+        scoreText.text = "Score: " + score.ToString();
+        lastScoreText.text = "Score: " + score.ToString();
 
-        score += 1;
+        //score += 1;
 
     }
 

@@ -108,8 +108,6 @@ public class SpawnSemiminime : MonoBehaviour
         if (axis1.CompareTag(note1.tag) && axis2.CompareTag(note2.tag))
         {
             Debug.Log("tag assi-note assegnati correttamente");
-       
-        
         }
 
         // prendo un testo a caso tra i due associati al tag delle due note
@@ -153,22 +151,15 @@ public class SpawnSemiminime : MonoBehaviour
 
     void CompareTags()
     {
-
         //comparo il tag del testo spawnato col tag delle note
-        // tutto ok funziona ma rompe lo spawn perché se non trova testi corrispondenti spawna a caso finché non ne trova
         if (selectedText.tag == note1.tag)
             Debug.Log("test");
-
         {
-            scriptPrefab.OnTriggerEnter2D();
-            sm.AddPoint();
+            //scriptPrefab.OnTriggerEnter2D();
+           // sm.AddNotePoint();
+           // sm.AddPoint();
            Debug.Log("testo corrisponde a nota1");
-
         }
-
-       //if selectedTetx.tag == nota con cui avviene la collisione
-       //come sto gestendo la collisione? 
-
     }
 
 
