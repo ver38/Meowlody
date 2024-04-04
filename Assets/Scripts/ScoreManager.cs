@@ -6,12 +6,13 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    //public int noteCount;
+   // public int noteCount;
     public Text scoreText;
     public Text highScoreText;
     public Text lastScoreText;
 
-    public int score = 0;
+    public int score;
+    //public int score = 0;
     public int highScore = 0;
 
     // Start is called before the first frame update
@@ -38,15 +39,7 @@ public class ScoreManager : MonoBehaviour
 
     }
 
-    public void AddNotePoint()
-    {
-        score ++;
-        scoreText.text = "Score: " + score.ToString();
-        lastScoreText.text = "Score: " + score.ToString();
-
-        //score += 1;
-
-    }
+   
 
     // Update is called once per frame
     void Update()

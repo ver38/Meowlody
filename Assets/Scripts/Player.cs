@@ -64,7 +64,6 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Cookie"))
         {
             Destroy(other.gameObject);
-
             sm.AddPoint();
         }
     }

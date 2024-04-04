@@ -12,8 +12,8 @@ public class SpawnSemiminime : MonoBehaviour
 
     public static TextArrayBuilder textarraybuild;
     public Player player;
-    public static ScoreManager sm;
-    public static Semiminima scriptPrefab;
+    public ScoreManager sm;
+    public Semiminima scriptPrefab;
 
     public float timeBetweenSpawn;
     private float spawnTime;
@@ -21,25 +21,14 @@ public class SpawnSemiminime : MonoBehaviour
     public GameObject note1;
     public GameObject note2;
 
-
-
     public GameObject selectedText = null;
     public GameObject textObject = null;
-
-
-
 
 
     void Start()
     {
 
         spawnTime = Time.time + timeBetweenSpawn;
-
-        //trova lo script del prefab per poter richiamare il metodo ontriggerenter2d
-      //  GameObject objWithScript1 = GameObject.Find("Semiminima");
-
-        //  referenza allo script del prefab
-        //scriptPrefab = objWithScript1.GetComponent<Semiminima>();
 
     }
 
@@ -49,7 +38,7 @@ public class SpawnSemiminime : MonoBehaviour
         {
             Spawn();
             spawnTime = Time.time + timeBetweenSpawn;
-            CompareTags();
+          //  CompareTags();
         }
     }
 
@@ -93,16 +82,8 @@ public class SpawnSemiminime : MonoBehaviour
         GameObject note1 = Instantiate(semiminima, new Vector3(axis1Position.x + Random.Range(minX, maxX), axis1Position.y, axis1Position.z), Quaternion.identity);
         GameObject note2 = Instantiate(semiminima, new Vector3(axis2Position.x + Random.Range(minX, maxX), axis2Position.y, axis2Position.z), Quaternion.identity);
 
-        //note1 = Instantiate(semiminima, new Vector3(axis1Position.x + Random.Range(minX, maxX), axis1Position.y, axis1Position.z), Quaternion.identity);
-        //note2 = Instantiate(semiminima, new Vector3(axis2Position.x + Random.Range(minX, maxX), axis2Position.y, axis2Position.z), Quaternion.identity);
-
-
         note1.tag = axis1.tag;
         note2.tag = axis2.tag;
-
-        //string note1Tag = note1.tag;
-        //string note2Tag = note2.tag;
-
 
         // controlla se il tag delle note = tag degli assi, NON TOCCARE PIU NIENTE
         if (axis1.CompareTag(note1.tag) && axis2.CompareTag(note2.tag))
@@ -117,7 +98,7 @@ public class SpawnSemiminime : MonoBehaviour
             if (textObject.CompareTag(note1.tag) || textObject.CompareTag(note2.tag))
             {
                 selectedText = textObject;
-                break;
+                //break;
             }
         }
 
@@ -146,24 +127,27 @@ public class SpawnSemiminime : MonoBehaviour
         {
             Debug.LogWarning("non ci sono testi associati al tag delle note");
         }
-
     }
 
-    void CompareTags()
+
+    public void CompareTags()
     {
         //comparo il tag del testo spawnato col tag delle note
-        if (selectedText.tag == note1.tag)
-            Debug.Log("test");
+        if (selectedText.tag != note1.tag)
+            // AddPointsToScore();
+
+        Debug.Log("tag del testo e tag nota sono uguali");
         {
-            //scriptPrefab.OnTriggerEnter2D();
-           // sm.AddNotePoint();
-           // sm.AddPoint();
-           Debug.Log("testo corrisponde a nota1");
+            AddPointsToScore();
+            Debug.Log("bla");
         }
     }
 
 
-
+    private void AddPointsToScore()
+    {
+        sm.AddPoint();
+    }
 
     Transform[] GetAxesFromContainer()
     {

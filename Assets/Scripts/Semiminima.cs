@@ -60,9 +60,7 @@ public class Semiminima : MonoBehaviour
         if (gameObject.CompareTag("Player"))
             Debug.Log("collisione avvenuta ye");
         {
-          Destroy(this.gameObject);
-            //sm.AddNotePoint();
-
+            Destroy(this.gameObject);
         }
         throw new NotImplementedException();
    }
