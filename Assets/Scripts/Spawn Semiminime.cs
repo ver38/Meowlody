@@ -124,9 +124,12 @@ public class SpawnSemiminime : MonoBehaviour
         }
 
         //prendo il tag da passarmi nello script della collisione della nota
+        selectedText.tag = note1.tag;
         string selectedTextTag = selectedText.tag;
         Debug.Log("vedo tag di selectedText: " + selectedTextTag);
 
+        //selectedText.tag = note1.tag;
+        Debug.Log("vedo i due tag: " + selectedTextTag + note1.tag);
 
         // disattiva tutti i testi tranne quello selezionato
         foreach (GameObject textObject in noteTextContainer)
@@ -153,13 +156,13 @@ public class SpawnSemiminime : MonoBehaviour
 
         //comparo il tag del testo spawnato col tag delle note
         // tutto ok funziona ma rompe lo spawn perché se non trova testi corrispondenti spawna a caso finché non ne trova
-        if (selectedText.tag == note2.tag || selectedText.tag == note1.tag)
+        if (selectedText.tag == note1.tag)
             Debug.Log("test");
 
         {
             scriptPrefab.OnTriggerEnter2D();
-            //sm.AddPoint();
-            Debug.Log("testo corrisponde a nota1");
+            sm.AddPoint();
+           Debug.Log("testo corrisponde a nota1");
 
         }
 

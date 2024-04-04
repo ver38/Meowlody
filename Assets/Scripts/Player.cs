@@ -63,20 +63,9 @@ public class Player : MonoBehaviour
         //collisione con minicookie
         if (other.gameObject.CompareTag("Cookie"))
         {
-            //audio se rompe il gioco lo levi da qua e levi sopra audiomanager e awake
-            // ok rompe la collisione
-            //audioManager.PlaySFX(audioManager.cookie);
-
             Destroy(other.gameObject);
 
             sm.AddPoint();
         }
-
-        
-
-
     }
-
-
-
 }

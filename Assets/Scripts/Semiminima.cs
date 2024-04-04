@@ -59,12 +59,14 @@ public class Semiminima : MonoBehaviour
     {
         if (gameObject.CompareTag("Player"))
             Debug.Log("collisione avvenuta ye");
-       // if (collision.tag == "Border")
         {
           Destroy(this.gameObject);
          }
         throw new NotImplementedException();
    }
+
+
+
 }
 
 
