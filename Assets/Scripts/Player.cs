@@ -10,21 +10,12 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 playerDirection;
     public ScoreManager sm;
-    public SpawnSemiminime spawnSem;
-    public TextArrayBuilder tab;
+    public SpawnManager spawnman;
+    public DamagePlayer dm;
 
     private bool isTouching = false;
     private Vector2 touchStartPosition;
     private Vector2 lastTouchPosition;
-
-    //AudioManager audioManager;
-    //ok rompe il touch
-    //private void Awake()
-    //{
-      //  audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    //}
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -56,15 +47,33 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(0, playerDirection.y * playerSpeed);
     }
 
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        
 
-        //collisione con minicookie
-        if (other.gameObject.CompareTag("Cookie"))
+
+        if (other.gameObject.CompareTag("Nota"))
+
         {
+            sm.AddToScore();
+            // Debug.Log("nuovo score " + sm.currentScore);
+
             Destroy(other.gameObject);
-            sm.AddPoint();
+            //  Debug.Log("collisione con nota amica");
         }
+
+
+        else if
+             (other.gameObject.CompareTag("WrongNote"))
+        {
+
+
+            Destroy(other.gameObject);
+            dm.DecreaseHealth(1);
+            // Debug.Log("nota nemica toccata, -1 vite");
+        }
+
+
     }
+
 }

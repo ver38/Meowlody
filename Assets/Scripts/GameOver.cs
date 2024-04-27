@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
+    public DamagePlayer damplay;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,8 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("Player") == null)
+        if (damplay.health<=0)
+        //if (GameObject.FindGameObjectWithTag("Player") == null)
 
         {
             gameOverPanel.SetActive(true);
