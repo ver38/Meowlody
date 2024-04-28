@@ -10,7 +10,6 @@ public class DamagePlayer : MonoBehaviour
     public int health;
     public Text healthText;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +31,10 @@ public class DamagePlayer : MonoBehaviour
 
         if (health <= 0)
         {
-            Debug.Log("player dead");
+                Debug.Log("player dead");
         }
     }
+
+
+
 }

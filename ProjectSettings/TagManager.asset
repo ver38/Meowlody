@@ -18,6 +18,7 @@ TagManager:
   - PSol
   - Nota
   - Cookie
+  - WrongNote
   layers:
   - Default
   - TransparentFX
@@ -25,10 +26,10 @@ TagManager:
   - 
   - Water
   - UI
+  - Player
   - 
-  - 
-  - 
-  - 
+  - Notes
+  - Enemy Notes
   - 
   - 
   - 
