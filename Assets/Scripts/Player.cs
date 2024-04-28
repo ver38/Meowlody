@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
 
         {
             sm.AddToScore();
-            // Debug.Log("nuovo score " + sm.currentScore);
+             Debug.Log("nuovo score " + sm.currentScore);
 
             Destroy(other.gameObject);
             //  Debug.Log("collisione con nota amica");

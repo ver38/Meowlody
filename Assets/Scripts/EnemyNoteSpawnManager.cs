@@ -33,7 +33,6 @@ public class EnemyNoteSpawnManager : MonoBehaviour
             enemyTimer = 0f;
 
         }
-        //CompareNames();
 
     }
 
@@ -58,10 +57,11 @@ public class EnemyNoteSpawnManager : MonoBehaviour
         nomeNotaNemica = SpawnedEnemy.name;
 
         //GameObject spawnedEnemy = Instantiate(enemyToSpawn, spawnEnemyPosition, Quaternion.identity);
-        // Debug.Log("nota nemica spawnata");
+         Debug.Log("nota nemica spawnata " + nomeNotaNemica);
+        CompareNames();
 
         Destroy(SpawnedEnemy, 15f);
-        CompareNames();
+        //CompareNames();
 
         return SpawnedEnemy;
 
@@ -73,7 +73,7 @@ public class EnemyNoteSpawnManager : MonoBehaviour
 
     public void CompareNames()
     {
-
+        //if (SpawnedEnemy.name != smng.spawnedNoteName)
         if (nomeNotaNemica != smng.spawnedNoteName)
         {
             Debug.Log("NOMI DIVERSI" + nomeNotaNemica + smng.spawnedNoteName);

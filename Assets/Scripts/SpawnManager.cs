@@ -53,12 +53,12 @@ public class SpawnManager : MonoBehaviour
 
         //gli do il nome origiale del prefab
         SpawnedNote.name = noteToSpawn.name;
-        //Debug.Log("nota amica spawnata");
+        Debug.Log("nota amica spawnata" + SpawnedNote.name);
 
         spawnedNoteName = SpawnedNote.name;
         //string spawnedNoteName = SpawnedNote.name;
 
-        StartCoroutine(UpdateTextWithDelay(spawnedNoteName, 60f));
+        StartCoroutine(UpdateTextWithDelay(spawnedNoteName, 3));
         // Debug.Log("into coroutine");
 
         textObject.text = spawnedNoteName;
@@ -71,8 +71,8 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator UpdateTextWithDelay(string showedText, float delay)
     {
-        yield return new WaitForSeconds(delay);
-        //  yield return new WaitForSecondsRealtime(delay);
+        //yield return new WaitForSeconds(delay);
+          yield return new WaitForSecondsRealtime(delay);
         textObject.text = showedText;
     }
 }

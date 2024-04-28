@@ -7,11 +7,14 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public int pointsPerNote = 1;
+
     public int currentScore = 0;
     public int highScore;
 
     [SerializeField] Text scoreText;
     [SerializeField] Text highScoreText;
+    [SerializeField] Text lastScoreText;
+       
 
 
 
@@ -22,21 +25,33 @@ public class ScoreManager : MonoBehaviour
 
         currentScore = PlayerPrefs.GetInt("currentScore", 0);
         highScore = PlayerPrefs.GetInt("highScore", 0);
+
         //highScore = PlayerPrefs.GetInt("highScore".ToString(),Convert.ToInt32(currentScore));
         // Debug.Log(bestScore);
 
-        scoreText.text = "Score: " + currentScore.ToString();
-        highScoreText.text = "Highscore " + highScore.ToString();
+        scoreText.text = "Your score: " + currentScore.ToString();
+        lastScoreText.text = currentScore.ToString();
+
+        lastScoreText.text = "Your score: " + currentScore.ToString();
+        highScoreText.text = "Max score: " + highScore.ToString();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score: " + currentScore.ToString();
-        highScoreText.text = "Highscore " + highScore.ToString();
-        //highScoreText.text = "Highscore " + currentScore.ToString();
+        //currentScore = PlayerPrefs.GetInt("currentScore", 0);
+        //highScore = PlayerPrefs.GetInt("highScore", 0);
 
+        //highScore = PlayerPrefs.GetInt("highScore".ToString(),Convert.ToInt32(currentScore));
+        // Debug.Log(bestScore);
+
+        scoreText.text = "Your score: " + currentScore.ToString();
+        //lastScoreText.text = currentScore.ToString();
+
+       // lastScoreText.text = "Your score: " + currentScore.ToString();
+        highScoreText.text = "Max score: " + highScore.ToString();
+        
 
     }
 
@@ -49,7 +64,6 @@ public class ScoreManager : MonoBehaviour
             //PlayerPrefs.SetInt("highScore", currentScore);
 
             PlayerPrefs.SetInt("highScore".ToString(), currentScore);
-            Debug.Log("entro nell if salvataggio");
             // Debug.Log("valore highscore " + highScore);
         }
 

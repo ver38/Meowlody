@@ -15,6 +15,7 @@ public class DamagePlayer : MonoBehaviour
     {
         health = fullHealth;
         healthText.text = "Health: " + health.ToString();
+        Time.timeScale = 1;
 
     }
 
@@ -31,7 +32,9 @@ public class DamagePlayer : MonoBehaviour
 
         if (health <= 0)
         {
-                Debug.Log("player dead");
+                Debug.Log("player dead game stops");
+                Time.timeScale = 0;
+
         }
     }
 
