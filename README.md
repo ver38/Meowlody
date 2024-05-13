@@ -4,7 +4,7 @@
 Meowlody is a game that combines cats, universe and music. What more?! 
 In this game, the player can learn how to read sheet music by running in a pentagram-shaped milky way.
 
-Currently on Testflight, soon on AppStoreTM!
+Currently on TestFlight, soon on AppStoreTM!
 
 
 
