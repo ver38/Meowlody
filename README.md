@@ -22,7 +22,7 @@ Every single test, every single feedback has been precious.😻
 
 ## Technology
 Game developed with UnityTM!
-All rights reserved.
+(All rights reserved).
 
 ## License
 **Creative Commons License, Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND)**:
