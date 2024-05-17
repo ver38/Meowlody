@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] notesToSpawn;
     private float timer = 0f;
-    public float spawnDelay = 1f;
+    public float spawnDelay = 0f;
     public ScoreManager scorMan;
     public Text textObject;
 
@@ -16,13 +16,18 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject SpawnedNote { get; private set; }
 
+    private void Awake()
+    {
+        NoteNameChanges();
 
+
+    }
 
 
     void Start()
     {
         //nascondo il testo all inizio
-        textObject.gameObject.SetActive(false);
+       // textObject.gameObject.SetActive(false);
 
     }
 
@@ -49,7 +54,7 @@ public class SpawnManager : MonoBehaviour
         SpawnedNote = Instantiate(noteToSpawn, spawnPosition, Quaternion.identity);
 
 
-        textObject.gameObject.SetActive(true);
+        //textObject.gameObject.SetActive(false);
 
         //gli do il nome origiale del prefab
         SpawnedNote.name = noteToSpawn.name;
@@ -58,7 +63,7 @@ public class SpawnManager : MonoBehaviour
         spawnedNoteName = SpawnedNote.name;
         //string spawnedNoteName = SpawnedNote.name;
 
-        StartCoroutine(UpdateTextWithDelay(spawnedNoteName, 3));
+       // StartCoroutine(UpdateTextWithDelay(spawnedNoteName, 3));
         // Debug.Log("into coroutine");
 
         textObject.text = spawnedNoteName;
@@ -69,10 +74,17 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    IEnumerator UpdateTextWithDelay(string showedText, float delay)
+    /*IEnumerator UpdateTextWithDelay(string showedText, float delay)
     {
         //yield return new WaitForSeconds(delay);
           yield return new WaitForSecondsRealtime(delay);
         textObject.text = showedText;
+    }*/
+
+    public void NoteNameChanges()
+    {
+        textObject.gameObject.SetActive(true);
+       // Debug.Log("sto dentro");
+
     }
 }

@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class PlayerLevel1 : MonoBehaviour
 {
 
     public float playerSpeed;
     private Rigidbody2D rb;
     private Vector2 playerDirection;
-    public ScoreManager sm;
-    public SpawnManager spawnman;
-    public DamagePlayer dm;
+    public ScoreLevel1 slvl;
+    public SpawnMiniCookie smc;
 
-    private bool isTouching = false;
-    private Vector2 touchStartPosition;
-    private Vector2 lastTouchPosition;
+    //public SpawnManagerTutorial spawnmant;
+
+    // private bool isTouching = false;
+    //private Vector2 touchStartPosition;
+    //private Vector2 lastTouchPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,6 @@ public class Player : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-
     {
         if (Input.touchCount > 0)
         {
@@ -34,8 +34,6 @@ public class Player : MonoBehaviour
             Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
             touchPosition.z = 0;
 
-
-            
             transform.position = new Vector3(transform.position.x, touchPosition.y, transform.position.z);
         }
         else
@@ -51,36 +49,27 @@ public class Player : MonoBehaviour
     }
 
 
+
+
     void OnTriggerEnter2D(Collider2D other)
     {
-
-
         if (other.gameObject.CompareTag("Nota"))
 
         {
-            sm.AddToScore();
-             Debug.Log("nuovo score " + sm.currentScore);
+            slvl.AddToScore();
+            Debug.Log("nuovo score " + slvl.currentScoreValueLvl);
 
             Destroy(other.gameObject);
-           // spawnman.NoteNameChanges();
-            //Debug.Log(" mostro nome solo su collisione");
-
             //  Debug.Log("collisione con nota amica");
         }
 
+        else if (other.gameObject.CompareTag("spiral"))
 
-        else if
-             (other.gameObject.CompareTag("WrongNote"))
         {
-
-
+            smc.IsCookieHit();
+            Debug.Log("cambio valore var " + smc.cookieIsEaten);
             Destroy(other.gameObject);
-            //spawnman.NoteNameChanges();
-            dm.DecreaseHealth(1);
-            // Debug.Log("nota nemica toccata, -1 vite");
         }
-
-
     }
 
 }

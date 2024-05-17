@@ -8,7 +8,7 @@ public class EnemyNoteSpawnManager : MonoBehaviour
     public GameObject[] enemySpawnPointsX;
 
     private float enemyTimer = 0f;
-    public float enemySpawnDelay = 2f;
+    public float enemySpawnDelay = 0f;
 
     public GameObject SpawnedEnemy { get; set; }
 
@@ -83,7 +83,9 @@ public class EnemyNoteSpawnManager : MonoBehaviour
         else
         {
             Destroy(SpawnedEnemy);
-            Debug.Log("i nomi sono uguali :( quindi intanto l'ho distrutta");
+            //sarà una schifezza boh però intanto fa quello che deve
+            SpawnEnemy();
+            Debug.Log("i nomi sono uguali :( quindi l ho distrutta e ricreata");
         }
     }
 

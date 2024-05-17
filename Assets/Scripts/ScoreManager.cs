@@ -9,7 +9,9 @@ public class ScoreManager : MonoBehaviour
     public int pointsPerNote = 1;
 
     public int currentScore = 0;
-    public int highScore;
+    // public int highScore;
+    public int highScore = 0;
+    
 
     [SerializeField] Text scoreText;
     [SerializeField] Text highScoreText;
@@ -47,9 +49,9 @@ public class ScoreManager : MonoBehaviour
         // Debug.Log(bestScore);
 
         scoreText.text = "Your score: " + currentScore.ToString();
-        //lastScoreText.text = currentScore.ToString();
+        lastScoreText.text = currentScore.ToString();
 
-       // lastScoreText.text = "Your score: " + currentScore.ToString();
+       lastScoreText.text = "Your score: " + currentScore.ToString();
         highScoreText.text = "Max score: " + highScore.ToString();
         
 

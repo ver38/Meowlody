@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class CheckPosition : MonoBehaviour
 {
-    [SerializeField] GameObject PositionChecker;
+    public SpawnManager spawnman;
+
+    public GameObject PositionChecker;
+
+    private void Awake()
+    {
+        spawnman.NoteNameChanges();
+
+    }
+
+
     void Start()
     {
 
@@ -15,11 +25,23 @@ public class CheckPosition : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Nota"))
+
         {
-            Debug.Log("collisione con game object vuoto");
+            spawnman.NoteNameChanges();
+            //Debug.Log("CARNAGE");
+
+            //  Debug.Log("collisione con nota amica");
+        }
+
+
+        else if
+             (other.gameObject.CompareTag("WrongNote"))
+        {
+            spawnman.NoteNameChanges();
+             Debug.Log("mostro nome su collisione");
         }
     }
 }
