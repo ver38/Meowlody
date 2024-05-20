@@ -3,7 +3,13 @@ guid: e63fd2513e4ce41c5bf3f85556789251
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - musicSource: {instanceID: 0}
+  - SFXSource: {instanceID: 0}
+  - background: {instanceID: 0}
+  - odetojoy: {instanceID: 0}
+  - moonlight: {instanceID: 0}
+  - notaGiusta: {fileID: 8300000, guid: 09cfb82db2c95410e9537e61fbf5bbce, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

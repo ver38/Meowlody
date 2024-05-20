@@ -12,8 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip background;
     public AudioClip odetojoy;
     public AudioClip moonlight;
-    public AudioClip cookie;
-    public AudioClip skull;
+   public AudioClip notaGiusta;
 
 
     private void Start() {
@@ -22,9 +21,5 @@ public class AudioManager : MonoBehaviour
 
     }
 
-   // public void PlaySFX(AudioClip clip) {
-
-     //   SFXSource.PlayOneShot(clip); 
-
-    //}
+   
 }

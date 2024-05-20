@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    
 
     public float playerSpeed;
     private Rigidbody2D rb;
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour
     public ScoreManager sm;
     public SpawnManager spawnman;
     public DamagePlayer dm;
+
 
     private bool isTouching = false;
     private Vector2 touchStartPosition;
@@ -59,6 +61,7 @@ public class Player : MonoBehaviour
 
         {
             sm.AddToScore();
+            
              Debug.Log("nuovo score " + sm.currentScore);
 
             Destroy(other.gameObject);

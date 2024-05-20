@@ -389,6 +389,94 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   parallaxEffect: 1
+--- !u!1001 &53416455
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 734327042701355150, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748336360434286051, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+      propertyPath: m_Name
+      value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847887169554497679, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847887169554497679, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847887169554497679, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847887169554497679, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847887169554497679, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847887169554497679, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847887169554497679, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847887169554497679, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847887169554497679, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847887169554497679, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2748336360434286051, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 53416458}
+  m_SourcePrefab: {fileID: 100100000, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+--- !u!1 &53416456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2748336360434286051, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+  m_PrefabInstance: {fileID: 53416455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &53416457 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 780288243347132356, guid: 42eb0b5949259470a86fecf8edece7fd, type: 3}
+  m_PrefabInstance: {fileID: 53416455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &53416458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53416456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9277c371cba0e4a2a887de5238d51780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: {fileID: 53416457}
+  transitionTime: 1
 --- !u!1 &102230192
 GameObject:
   m_ObjectHideFlags: 0
@@ -3151,8 +3239,7 @@ MonoBehaviour:
   background: {fileID: 8300000, guid: 55936b6910f064f93b53861641ee2d43, type: 3}
   odetojoy: {fileID: 8300000, guid: 55936b6910f064f93b53861641ee2d43, type: 3}
   moonlight: {fileID: 8300000, guid: 770478050220342009d9846b15bfa732, type: 3}
-  cookie: {fileID: 8300000, guid: 989d7edbe041a4582b5945485560c62f, type: 3}
-  skull: {fileID: 8300000, guid: 285260f7e7d254ed5b9ff9ef123a42ea, type: 3}
+  notaGiusta: {fileID: 8300000, guid: 09cfb82db2c95410e9537e61fbf5bbce, type: 3}
 --- !u!4 &1388807247
 Transform:
   m_ObjectHideFlags: 0
@@ -4648,3 +4735,4 @@ SceneRoots:
   - {fileID: 836981535}
   - {fileID: 899879355}
   - {fileID: 1388807247}
+  - {fileID: 53416455}

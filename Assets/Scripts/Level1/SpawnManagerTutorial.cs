@@ -8,14 +8,15 @@ public class SpawnManagerTutorial : MonoBehaviour
 {
     public GameObject[] notesToSpawn;
     private float timer = 0f;
-    public float spawnNoteDelay = 10f;
+    public float spawnNoteDelay = 0f;
 
     public ScoreLevel1 scorMan;
     public SpawnMiniCookie spawnmc;
+   // public TutorialManager tutMan;
 
     public Text textObject;
 
-    public string spawnedNotesName;
+    public string spawnedNotesName; 
 
     public GameObject SpawnedNotes { get; private set; }
 
@@ -33,6 +34,8 @@ public class SpawnManagerTutorial : MonoBehaviour
     {
         timer += Time.deltaTime;
         if (timer >= spawnNoteDelay)
+
+            //if (timer >= spawnNoteDelay && tutMan.isTutorialFinished == true)
         {
            // SpawnLinesNotes();
             SpawnSystem();
@@ -97,6 +100,14 @@ public class SpawnManagerTutorial : MonoBehaviour
             SpawnSpacesNotes();
     Debug.Log("spawno note negli spazi");
         }
+
+    }
+
+
+    public void NoteNameChanges()
+    {
+        textObject.gameObject.SetActive(true);
+        // Debug.Log("sto dentro");
 
     }
 }
