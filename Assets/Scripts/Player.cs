@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    
+    public AudioSource audioPlayer;
 
     public float playerSpeed;
     private Rigidbody2D rb;
@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
 
         {
             sm.AddToScore();
-            
+            audioPlayer.Play();
              Debug.Log("nuovo score " + sm.currentScore);
 
             Destroy(other.gameObject);

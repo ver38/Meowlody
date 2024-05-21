@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerLevel1 : MonoBehaviour
 {
+    public AudioSource audioPlayer;
 
     public float playerSpeed;
     private Rigidbody2D rb;
@@ -56,6 +57,7 @@ public class PlayerLevel1 : MonoBehaviour
         if (other.gameObject.CompareTag("Nota"))
 
         {
+            audioPlayer.Play();
             slvl.AddToScore();
             Debug.Log("nuovo score " + slvl.currentScoreValueLvl);
 
