@@ -19,6 +19,7 @@ TagManager:
   - Nota
   - Cookie
   - WrongNote
+  - spiral
   layers:
   - Default
   - TransparentFX

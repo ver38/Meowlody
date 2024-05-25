@@ -59,7 +59,7 @@ public class SpawnManagerTutorial : MonoBehaviour
             spawnedNotesName = SpawnedNotes.name;
             textObject.text = spawnedNotesName;
 
-            Destroy(SpawnedNotes, 10f);
+            Destroy(SpawnedNotes, 8f);
             return SpawnedNotes;
 
         }
@@ -80,7 +80,7 @@ public class SpawnManagerTutorial : MonoBehaviour
             spawnedNotesName = SpawnedNotes.name;
             textObject.text = spawnedNotesName;
 
-            Destroy(SpawnedNotes, 10f);
+            Destroy(SpawnedNotes, 8f);
             return SpawnedNotes;
 
         }
