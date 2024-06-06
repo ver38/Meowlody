@@ -1,10 +1,10 @@
 
-# MEOWLODY
+# MEOWING MELODY
 
-Meowlody is a game that combines cats, universe and music. What more?! <br/><br/>
+Meowing Melody is a game that combines cats, universe and music. What more?! <br/><br/>
 In this game, the player can learn how to read sheet music by running in a pentagram-shaped milky way.
 
-Currently on TestFlight, soon on AppStoreTM!
+Currently on TestFligh & AppStoreTM!
 
 
 
